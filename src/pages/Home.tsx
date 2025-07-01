@@ -65,7 +65,7 @@ const Home = () => {
       title: 'জরুরি তথ্য',
       description: 'রক্তের জরুরি প্রয়োজনে যোগাযোগ করুন',
       icon: <Phone className="h-5 w-5 text-red-600" />,
-      content: '০১৭২২-৫২৮১৬ৄ'
+      content: '০১৭২২-৫২৮১৬৪'
     },
     {
       title: 'সেবার সময়',
@@ -90,15 +90,15 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-red-50 via-white to-pink-50 py-12">
+      <section className="bg-gradient-to-br from-red-50 via-white to-pink-50 pt-8 pb-12">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto">
             {/* Logo */}
-            <div className="w-28 h-28 mx-auto mb-6 flex items-center justify-center">
+            <div className="w-32 h-32 mx-auto mb-6 flex items-center justify-center">
               <img 
                 src="https://i.postimg.cc/pVmRddDC/bobdo-removebg-preview.png" 
                 alt="BOBDO Logo" 
-                className="h-24 w-24 object-contain"
+                className="h-28 w-28 object-contain"
               />
             </div>
             
@@ -165,37 +165,37 @@ const Home = () => {
           {/* Primary Actions */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 max-w-4xl mx-auto">
             {quickActions.filter(action => action.primary).map((action, index) => (
-              <Card key={index} className={`${action.color} border shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1`}>
-                <CardContent className="p-6 text-center">
-                  <div className="text-red-600 mb-4 flex justify-center">{action.icon}</div>
-                  <CardTitle className="text-xl mb-3 text-gray-900">{action.title}</CardTitle>
-                  <CardDescription className="text-gray-600 mb-6">{action.description}</CardDescription>
-                  <Button asChild className="w-full bg-red-600 hover:bg-red-700 rounded-xl">
-                    <Link to={action.link}>
+              <Link key={index} to={action.link} className="block">
+                <Card className={`${action.color} border shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer h-full`}>
+                  <CardContent className="p-6 text-center">
+                    <div className="text-red-600 mb-4 flex justify-center">{action.icon}</div>
+                    <CardTitle className="text-xl mb-3 text-gray-900">{action.title}</CardTitle>
+                    <CardDescription className="text-gray-600 mb-6">{action.description}</CardDescription>
+                    <div className="w-full bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-xl inline-flex items-center justify-center gap-2">
                       শুরু করুন
                       <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
 
           {/* Secondary Actions */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto">
             {quickActions.filter(action => !action.primary).map((action, index) => (
-              <Card key={index} className={`${action.color} border shadow-sm hover:shadow-md transition-all duration-300`}>
-                <CardContent className="p-4 text-center">
-                  <div className="text-red-600 mb-3 flex justify-center">{action.icon}</div>
-                  <CardTitle className="text-sm mb-2 text-gray-900">{action.title}</CardTitle>
-                  <CardDescription className="text-xs text-gray-600 mb-3">{action.description}</CardDescription>
-                  <Button asChild size="sm" variant="ghost" className="w-full text-xs h-8 rounded-lg">
-                    <Link to={action.link}>
+              <Link key={index} to={action.link} className="block">
+                <Card className={`${action.color} border shadow-sm hover:shadow-md transition-all duration-300 cursor-pointer h-full`}>
+                  <CardContent className="p-4 text-center">
+                    <div className="text-red-600 mb-3 flex justify-center">{action.icon}</div>
+                    <CardTitle className="text-sm mb-2 text-gray-900">{action.title}</CardTitle>
+                    <CardDescription className="text-xs text-gray-600 mb-3">{action.description}</CardDescription>
+                    <div className="w-full text-gray-700 hover:text-gray-900 text-xs h-8 rounded-lg inline-flex items-center justify-center">
                       দেখুন
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>

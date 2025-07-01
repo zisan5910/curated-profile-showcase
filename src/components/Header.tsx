@@ -32,16 +32,16 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center shadow-md border">
+            <div className="w-10 h-10 rounded-xl flex items-center justify-center">
               <img 
                 src="https://i.postimg.cc/pVmRddDC/bobdo-removebg-preview.png" 
                 alt="BOBDO Logo" 
                 className="h-8 w-8 object-contain"
               />
             </div>
-            <div className="hidden sm:block">
+            <div className="block">
               <h1 className="text-lg font-bold text-gray-900">BOBDO</h1>
-              <p className="text-xs text-gray-600">রক্তদান সংগঠন</p>
+              <p className="text-xs text-gray-600 hidden sm:block">রক্তদান সংগঠন</p>
             </div>
           </Link>
 
@@ -105,7 +105,7 @@ const Header = () => {
                 {/* Header */}
                 <div className="p-6 border-b bg-red-50">
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-md border">
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center">
                       <img 
                         src="https://i.postimg.cc/pVmRddDC/bobdo-removebg-preview.png" 
                         alt="BOBDO Logo" 
@@ -165,7 +165,7 @@ const Header = () => {
                       href="tel:01722528164"
                       className="text-red-600 font-semibold text-sm"
                     >
-                      ০১৭২২-৫২৮১৬৪
+                      ০১৭২২-৫২৮১৬ৄ
                     </a>
                   </div>
                 </div>
