@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Heart, Users, Search, Plus, Award, Building2, HeartHandshake, Phone, Mail, Clock, MapPin, Shield, Star, Facebook } from 'lucide-react';
@@ -87,15 +86,15 @@ const Home = () => {
 
   const socialLinks = [
     {
-      name: 'ফেসবুক পেজ',
+      name: 'পেজ',
       url: 'https://www.facebook.com/bobdo.official',
-      icon: <Facebook className="h-5 w-5" />,
+      icon: <Facebook className="h-4 w-4" />,
       color: 'bg-blue-600 hover:bg-blue-700'
     },
     {
-      name: 'ফেসবুক গ্রুপ',
+      name: 'গ্রুপ',
       url: 'https://www.facebook.com/groups/BOBO.BD',
-      icon: <Users className="h-5 w-5" />,
+      icon: <Users className="h-4 w-4" />,
       color: 'bg-blue-600 hover:bg-blue-700'
     }
   ];
@@ -103,18 +102,16 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-red-50 via-white to-pink-50 pt-4 pb-12">
+      <section className="bg-gradient-to-br from-red-50 via-white to-pink-50 pt-8 pb-12">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-4xl mx-auto">
             {/* Logo */}
             <div className="w-40 h-40 mx-auto mb-6 flex items-center justify-center">
-              <div className="w-32 h-32 bg-gradient-to-br from-red-500 to-red-600 rounded-3xl flex items-center justify-center shadow-2xl">
-                <img 
-                  src="https://i.postimg.cc/pVmRddDC/bobdo-removebg-preview.png" 
-                  alt="BOBDO Logo" 
-                  className="h-24 w-24 object-contain"
-                />
-              </div>
+              <img 
+                src="https://i.postimg.cc/pVmRddDC/bobdo-removebg-preview.png" 
+                alt="BOBDO Logo" 
+                className="h-32 w-32 object-contain"
+              />
             </div>
             
             {/* Title */}
@@ -126,7 +123,7 @@ const Home = () => {
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
               <Button asChild size="lg" className="bg-red-600 hover:bg-red-700 h-12 px-8 rounded-xl shadow-lg">
                 <Link to="/find-donors" className="flex items-center gap-2">
                   <Search className="h-5 w-5" />
@@ -142,14 +139,14 @@ const Home = () => {
             </div>
 
             {/* Facebook Links */}
-            <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
+            <div className="flex flex-row gap-2 justify-center">
               {socialLinks.map((link, index) => (
                 <a
                   key={index}
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`flex items-center justify-center gap-2 ${link.color} text-white px-4 py-2 rounded-lg transition-all duration-200 hover:scale-105 text-sm font-medium`}
+                  className={`flex items-center gap-1 ${link.color} text-white px-3 py-1 rounded-full transition-all duration-200 hover:scale-105 text-sm`}
                 >
                   {link.icon}
                   <span>{link.name}</span>

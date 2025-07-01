@@ -44,14 +44,13 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="container mx-auto px-4 py-8">
-        {/* Main Footer Content */}
+    <footer className="bg-gray-900 text-white py-8">
+      <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* App Info */}
-          <div className="md:col-span-1">
+          <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center shadow-lg">
+              <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg">
                 <img 
                   src="https://i.postimg.cc/pVmRddDC/bobdo-removebg-preview.png" 
                   alt="BOBDO Logo" 
@@ -63,9 +62,6 @@ const Footer = () => {
                 <p className="text-gray-400 text-sm">রক্তদান সংগঠন</p>
               </div>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              বগুড়া অনলাইন রক্তদান সংগঠন - ২০১৬ সাল থেকে নিরবচ্ছিন্ন সেবা প্রদান করে আসছি। আমাদের ৬৮,০০০+ সদস্য রয়েছে।
-            </p>
           </div>
 
           {/* Quick Links */}
@@ -133,26 +129,6 @@ const Footer = () => {
                   <span className="font-medium">{link.name}</span>
                 </a>
               ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Section */}
-        <div className="border-t border-gray-800 mt-8 pt-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-center md:text-left">
-              <p className="text-gray-400">
-                &copy; ২০১৬-২০২৫ BOBDO. সকল অধিকার সংরক্ষিত।
-              </p>
-            </div>
-            <div className="flex items-center gap-4">
-              <Link to="/developer-info" className="text-gray-400 hover:text-white transition-colors">
-                ডেভেলপার তথ্য
-              </Link>
-              <span className="text-gray-600">|</span>
-              <Link to="/contacts" className="text-gray-400 hover:text-white transition-colors">
-                যোগাযোগ
-              </Link>
             </div>
           </div>
         </div>
