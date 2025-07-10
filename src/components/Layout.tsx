@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Header from './Header';
-import Footer from './Footer';
 import BottomNavigation from './BottomNavigation';
 
 interface LayoutProps {
@@ -23,7 +22,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <main className="flex-grow pb-16">
         {children}
       </main>
-      <Footer />
       <BottomNavigation />
     </div>
   );
