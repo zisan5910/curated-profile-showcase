@@ -51,19 +51,14 @@ const FindDonor = () => {
           <CardContent className="p-6 text-center">
             <Button
               onClick={openFacebookGroup}
-              className="w-full btn-ripple bg-primary hover:bg-primary-hover text-primary-foreground text-lg py-4 mb-4"
+              className="w-full btn-ripple bg-primary hover:bg-primary-hover text-primary-foreground text-lg py-4"
             >
               <Facebook className="h-5 w-5 mr-2" />
-              ফেসবুক গ্রুপে পোস্ট করুন
+              গ্রুপে পোস্ট করুন
             </Button>
-            <Button
-              variant="outline"
-              onClick={copyTemplate}
-              className="w-full"
-            >
-              <Copy className="h-4 w-4 mr-2" />
-              পোস্ট টেমপ্লেট কপি করুন
-            </Button>
+            <p className="text-sm text-muted-foreground font-bengali text-center mt-2">
+              ক্লিক করলে টেমপ্লেট কপি হবে এবং ফেসবুক গ্রুপ খুলবে
+            </p>
           </CardContent>
         </Card>
 
@@ -130,18 +125,37 @@ const FindDonor = () => {
               <Heart className="h-5 w-5 text-primary" />
               রক্তের গ্রুপ সামঞ্জস্যতা চার্ট
             </CardTitle>
+            <p className="text-sm text-muted-foreground font-bengali mt-2">
+              কোন গ্রুপ কাকে রক্ত দিতে পারে
+            </p>
           </CardHeader>
           <CardContent>
-            <div className="grid gap-2">
+            <div className="grid gap-3">
               {bloodCompatibility.map((group, index) => (
-                <div key={index} className="flex items-center justify-between p-3 bg-muted rounded-lg">
-                  <div className="font-semibold text-primary">{group.donor}</div>
-                  <div className="text-sm text-muted-foreground">→</div>
-                  <div className="text-sm font-bengali">
-                    {group.recipients.join(", ")}
+                <div key={index} className="p-4 bg-gradient-to-r from-red-50 to-red-100 border border-red-200 rounded-lg">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold">
+                        {group.donor}
+                      </div>
+                      <span className="font-bengali font-semibold">গ্রুপ</span>
+                    </div>
+                    <div className="text-sm text-muted-foreground font-bengali">দিতে পারে</div>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    {group.recipients.map((recipient, idx) => (
+                      <span key={idx} className="px-2 py-1 bg-white text-red-700 border border-red-300 rounded text-sm font-semibold">
+                        {recipient}
+                      </span>
+                    ))}
                   </div>
                 </div>
               ))}
+            </div>
+            <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+              <p className="text-blue-800 font-bengali text-sm text-center font-semibold">
+                💡 O- সর্বজনীন দাতা | AB+ সর্বজনীন গ্রহীতা
+              </p>
             </div>
           </CardContent>
         </Card>
@@ -158,8 +172,8 @@ const FindDonor = () => {
             <div className="flex gap-3">
               <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-sm">1</div>
               <div>
-                <h4 className="font-semibold font-bengali">পোস্ট টেমপ্লেট কপি করুন</h4>
-                <p className="text-sm text-muted-foreground font-bengali">উপরের বাটন চাপুন</p>
+                <h4 className="font-semibold font-bengali">গ্রুপে পোস্ট বাটন চাপুন</h4>
+                <p className="text-sm text-muted-foreground font-bengali">টেমপ্লেট কপি হবে এবং গ্রুপ খুলবে</p>
               </div>
             </div>
             <div className="flex gap-3">
